@@ -4,12 +4,13 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #d2bfb5a9;
+    background-color: #b6dcd1;
     color: #333;
 }
 
 .container {
-    width: 80%;
+    width: 90%; /* Fluid width */
+    max-width: 1200px; /* Maximum width for large screens */
     margin: auto;
     overflow: hidden;
 }
@@ -17,10 +18,10 @@ body {
 /* Header Styles */
 header {
     background: #333;
-    color: #999fa2;
+    color: #bae7e0;
     padding-top: 20px;
     min-height: 70px;
-    border-bottom: #5c75a1 3px solid;
+    border-bottom: #77aaff 3px solid;
 }
 
 header h1 {
@@ -46,7 +47,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #cdad9f7e;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
@@ -55,31 +56,21 @@ header nav ul li a:hover {
     color: #77aaff;
 }
 
-/* Section Styles */
-.section {
-    padding: 40px 0;
-    background: #c1e3de;
-    margin-bottom: 20px;
-}
-
-.section h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-}
-
 /* About Me Section */
 .about-content {
     display: flex;
+    flex-direction: column; /* Stack items vertically on small screens */
     align-items: center;
     gap: 20px;
+    text-align: center; /* Center text on small screens */
 }
 
 .profile-img {
-    width: 50px;
-    height: 50px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    border: 3px solid #1e1f20;
+    border: 3px solid #77aaff;
+    object-fit: cover;
 }
 
 /* Skills Section */
@@ -87,14 +78,14 @@ header nav ul li a:hover {
     list-style: none;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow skills to wrap on small screens */
     gap: 10px;
     justify-content: center;
 }
 
 .skills-list li {
-    background: #8898b1;
-    color: #fff;
+    background: #77aaff;
+    color: #bff0ec;
     padding: 10px 20px;
     border-radius: 5px;
 }
@@ -134,7 +125,7 @@ header nav ul li a:hover {
 /* Footer Styles */
 footer {
     background: #333;
-    color: #fff;
+    color: #9ed3c7;
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
@@ -142,4 +133,59 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    /* Adjust header for smaller screens */
+    header h1, header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    /* Adjust about section for smaller screens */
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Adjust skills section for smaller screens */
+    .skills-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Adjust project section for smaller screens */
+    .project {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .container {
+        width: 100%; /* Full width on very small screens */
+    }
+
+    .profile-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
 }
